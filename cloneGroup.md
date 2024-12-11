@@ -102,9 +102,9 @@ function getRecipientGroups(recipient) {
 - choose a user
 - right-click on the user record header
 - configure - UI Action
-- fill in the following
-  -- _name_ : clone groups
-  -- _table_ : sys_user
+- fill in the following items 
+  -- _name_ : clone groups 
+  -- _table_ : sys_user 
 
 
 
