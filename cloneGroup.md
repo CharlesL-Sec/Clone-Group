@@ -96,7 +96,15 @@ function getRecipientGroups(recipient) {
 
 ```
 
-
+### Create the UI Action
+- Add the UI Action to the sys_user table
+- sys_user.list
+- choose a user
+- right-click on the user record header
+- configure - UI Action
+- fill in the following
+  -- _name_ : clone groups
+  -- _table_ : sys_user
 
 
 
