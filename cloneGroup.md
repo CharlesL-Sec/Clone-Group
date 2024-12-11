@@ -103,11 +103,30 @@ function getRecipientGroups(recipient) {
 - right-click on the user record header
 - configure - UI Action
 - fill in the following items 
-  -- _name_ : clone groups 
-  -- _table_ : sys_user 
+
+  -- _name_ : clone groups  
+  -- _table_ : sys_user
+  -- _Active_ : x
+  -- _Show update_ : XClient:x
+  -- _Form button_ : x
+  -- _Onclick_ : cloneGroupsDialog()
+  -- _Condition_ : gs.hasRole('admin')
 
 
+### Glide Modal Script
 
+```js
+function cloneGroupsDialog() {
+    //Get the values to pass into the dialog
+    var current_user = g_form.getUniqueValue();
+    
+    //Initialize and open the Dialog Window
+    var dialog = new GlideDialogWindow('clone_permissions_popup'); //Render the dialog containing the UI Page 'task_comments_dialog'
+    dialog.setTitle('Clone groups to another user'); //Set the dialog title
+    dialog.setPreference('current_user', current_user); //Pass in current user sys_id for use in the dialog
+    dialog.render(); //Open the dialog
+} 
+```
 
 
 
