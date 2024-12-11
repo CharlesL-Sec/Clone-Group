@@ -117,14 +117,14 @@ function getRecipientGroups(recipient) {
 
 ```js
 function cloneGroupsDialog() {
-    //Get the values to pass into the dialog
+    // Get the values to pass into the dialog
     var current_user = g_form.getUniqueValue();
     
     //Initialize and open the Dialog Window
-    var dialog = new GlideDialogWindow('clone_permissions_popup'); //Render the dialog containing the UI Page 'task_comments_dialog'
-    dialog.setTitle('Clone groups to another user'); //Set the dialog title
-    dialog.setPreference('current_user', current_user); //Pass in current user sys_id for use in the dialog
-    dialog.render(); //Open the dialog
+    var dialog = new GlideDialogWindow('clone_permissions_popup'); //  Render the dialog containing the UI Page 'task_comments_dialog'
+    dialog.setTitle('Clone groups to another user'); // Set the dialog title
+    dialog.setPreference('current_user', current_user); // Pass in current user sys_id for use in the dialog
+    dialog.render(); // Open the dialog
 } 
 ```
 
