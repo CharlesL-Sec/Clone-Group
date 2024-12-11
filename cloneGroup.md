@@ -59,6 +59,42 @@
 
 
 
+### Creat UI Page CLient Script
+
+```glide
+function cloneGroups() {
+    var recipientID = gel('recipient_ref_field').value;
+    var donorID = gel('source_ref_field').value;
+    //get the recipient's groups in an array
+    var recipientGroups = getRecipientGroups(recipientID);
+    var donorGroup = new GlideRecord('sys_user_grmember');
+    var newGroup = new GlideRecord('sys_user_grmember');
+    donorGroup.addQuery('user', donorID);
+    donorGroup.addQuery('group', 'NOT IN', recipientGroups);
+    donorGroup.query();
+    
+    while (donorGroup.next()) {
+        newGroup.initialize();
+        newGroup.user = recipientID;
+        newGroup.group = donorGroup.group;
+        newGroup.insert();
+    }
+    alert('Group Clone completed. Click OK to return to the previous page.');
+}
+
+function getRecipientGroups(recipient) {
+    var recipientGroups = [];
+    var recipientGroupRecord = new GlideRecord('sys_user_grmember');
+    recipientGroupRecord.addQuery('user', recipient);
+    recipientGroupRecord.query();
+    while (recipientGroupRecord.next()) {
+        recipientGroups.push(recipientGroupRecord.group + '');
+    }
+    return recipientGroups;
+} 
+
+
+```
 
 
 
