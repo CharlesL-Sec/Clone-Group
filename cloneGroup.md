@@ -1,5 +1,8 @@
 # Create a new UI page to capture the user information
 
+Original source:
+- https://snprotips.com/blog/rvicenowprotips.com/2015/08/clone-one-users-access-to-another-user.html
+
 ### To Create the UI page (From). This page will appear in the ServiceNow menu bar.
 - goto system UI -> UI Pages (sys_ui_page.list)
 - Click new
