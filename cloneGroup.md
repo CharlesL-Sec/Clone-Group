@@ -59,7 +59,7 @@
 
 
 
-### Creat UI Page CLient Script
+### Create UI Page Client Script
 
 ```glide
 function cloneGroups() {
